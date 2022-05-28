@@ -45,7 +45,7 @@
 class FakeGps : public ModuleBase<FakeGps>, public ModuleParams, public px4::ScheduledWorkItem
 {
 public:
-	FakeGps(double latitude_deg = 29.6603018, double longitude_deg = -82.3160500, float altitude_m = 30.1f);
+	FakeGps(double latitude_deg = 473977507, double longitude_deg = 85456073, float altitude_m = 0.0f);
 
 	~FakeGps() override = default;
 
@@ -61,13 +61,13 @@ public:
 	bool init();
 
 private:
-	static constexpr uint32_t SENSOR_INTERVAL_US{1000000 / 5}; // 5 Hz
+	static constexpr uint32_t SENSOR_INTERVAL_US{1000000 / 50}; // 5 Hz
 
 	void Run() override;
 
 	uORB::PublicationMulti<sensor_gps_s> _sensor_gps_pub{ORB_ID(sensor_gps)};
 
-	int32_t _latitude{296603018};   // Latitude in 1e-7 degrees
-	int32_t _longitude{-823160500}; // Longitude in 1e-7 degrees
-	int32_t _altitude{30100};       // Altitude in 1e-3 meters above MSL, (millimetres)
+	int32_t _latitude{473977507};   // Latitude in 1e-7 degrees
+	int32_t _longitude{85456073}; // Longitude in 1e-7 degrees
+	int32_t _altitude{0};       // Altitude in 1e-3 meters above MSL, (millimetres)
 };

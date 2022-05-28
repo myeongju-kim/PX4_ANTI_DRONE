@@ -59,19 +59,19 @@ void FakeGps::Run()
 	}
 
 	sensor_gps_s sensor_gps{};
-	sensor_gps.time_utc_usec = hrt_absolute_time() + 1613692609599954;
+	sensor_gps.time_utc_usec = hrt_absolute_time();
 	sensor_gps.lat = _latitude;
 	sensor_gps.lon = _longitude;
 	sensor_gps.alt = _altitude;
 	sensor_gps.alt_ellipsoid = _altitude;
-	sensor_gps.s_variance_m_s = 0.3740f;
-	sensor_gps.c_variance_rad = 0.6737f;
-	sensor_gps.eph = 2.1060f;
-	sensor_gps.epv = 3.8470f;
-	sensor_gps.hdop = 0.8800f;
-	sensor_gps.vdop = 1.3300f;
-	sensor_gps.noise_per_ms = 101;
-	sensor_gps.jamming_indicator = 35;
+	sensor_gps.s_variance_m_s = 0.0f;
+	sensor_gps.c_variance_rad = 0.0f;
+	sensor_gps.eph = 0.0f;
+	sensor_gps.epv = 0.0f;
+	sensor_gps.hdop = 0.0f;
+	sensor_gps.vdop = 0.0;
+	sensor_gps.noise_per_ms = 100;
+	sensor_gps.jamming_indicator = 0;
 	sensor_gps.vel_m_s = 0.0420f;
 	sensor_gps.vel_n_m_s = 0.0370f;
 	sensor_gps.vel_e_m_s = 0.0200f;
